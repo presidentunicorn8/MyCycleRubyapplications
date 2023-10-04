@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="My_Cycle.MainPage"
+             BackgroundColor="Black">
+
+    
+    <StackLayout
+        Padding="0"
+        BackgroundColor="Black"
+        VerticalOptions="FillAndExpand">
+        <Frame
+            BackgroundColor="Black"
+            BorderColor="Black"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+            Spacing="25"
+            Padding="0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+             >
+
+                <Label
+                Text="Until the day of rekoning"
+                FontFamily="Mooky"
+                TextColor="White"
+                FontSize="18"
+                HorizontalOptions="Center"
+                />
+
+                <Label HorizontalOptions="Center" Margin="0,-70,0,-45">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text = "30" TextColor="#bb9700" FontFamily="Ghostween" FontSize="170" x:Name="daysLabel"/>
+                            <Span Text = " Days" TextColor="#bb9700" FontFamily="Ghostween" FontSize="30"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                Text="Based on average 28 day cycle"
+                x:Name="averageLabel"
+                FontFamily="Mooky"
+                TextColor="White"
+                FontSize="18"
+                HorizontalOptions="Center"
+                />
+
+                <ImageButton
+                Source="click.png"
+                x:Name="pom"
+                Clicked="ChangeImage"
+                HeightRequest="75"
+                HorizontalOptions="Center" />
+
+                <Label
+                Text="Predicted Next Cycle"
+                FontFamily="Mooky"
+                TextColor="White"
+                FontSize="18"
+                HorizontalOptions="Center"
+                />
+
+                <Label
+                Text="Mo. xx"
+                x:Name="predictedDateLabel"
+                FontFamily="Ghostween"
+                TextColor="#bb9700"
+                FontSize="60"
+                HorizontalOptions="Center"
+                 />
+
+            </StackLayout>
+        </Frame>
+        <Frame
+            Padding="0,0,0,25"
+            BorderColor="Black"
+            BackgroundColor="Black">
+            <StackLayout
+                VerticalOptions="End"
+                HorizontalOptions="CenterAndExpand">
+                <Grid
+                    HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                        <ImageButton
+                        Source="quill.png"
+                        x:Name="CounterBtn"
+                        SemanticProperties.Hint="Adds an item"
+                        Clicked="OnAddClicked"
+                        VerticalOptions="End"
+                        HeightRequest="50"
+                        Margin="0,0,100,0"
+                        />
+                        <DatePicker x:Name="MyDatePicker" 
+                                    WidthRequest="50"
+                                    DateSelected="OnDateSelected" 
+                                    MinimumDate="01/01/2000"
+                                    Margin="0,0,100,0"
+                                    FontSize="1"
+                                    />
+                        <ImageButton
+                        Source="clock.png"
+                        x:Name="CounterBtn2"
+                        SemanticProperties.Hint="Opens page to view log"
+                        Clicked="onHistoryClicked"
+                        VerticalOptions="End"
+                        HeightRequest="50"
+                        Margin="100,0,0,0"/>
+            </Grid>
+    </StackLayout>
+
+    </Frame>
+    </StackLayout>
+
+</ContentPage>
